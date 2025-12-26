@@ -1,11 +1,16 @@
-import fetch from "node-fetch";
-import { Client, Databases } from "node-appwrite";
+import { Client, ID } from "node-appwrite";
+import OpenAI from "openai";
+import { getStaticFile, throwIfMissing } from "./utils.js";
+import { Databases } from "node-appwrite";
+import { fetch } from "undici";
 
 /**
  * Main Appwrite Function Handler
  * @returns {Object} Response object
  */
 export default async ({ req, res, log, error }) => {
+  throwIfMissing(process.env, ["OPENAI_API_KEY"]);
+
   try {
     log("🚀 Starting Iran Internet Report Generation...");
 

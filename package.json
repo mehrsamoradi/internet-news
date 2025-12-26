@@ -13,7 +13,8 @@
   "dependencies": {
     "node-appwrite": "^21.1.0",
     "node-fetch": "^3.3.2",
-    "openai": "^6.15.0"
+    "openai": "^6.15.0",
+    "undici": "^7.16.0"
   },
   "devDependencies": {
     "prettier": "^3.2.5"
