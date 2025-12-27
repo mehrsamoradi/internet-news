@@ -24,14 +24,14 @@ export default async ({ req, res, log, error }) => {
 
     const databases = new Databases(client);
 
-    /* ---------------- 2. Collect Data with Perplexity ---------------- */
-    log("📊 Fetching data from Perplexity AI...");
+    /* ---------------- 2. Collect Data with Serper ---------------- */
+    log("📊 Fetching data from Serper AI...");
     const pplxResponse = await fetch(
-      "https://api.perplexity.ai/chat/completions",
+      "https://google.serper.dev/search",
       {
         method: "POST",
         headers: {
-          Authorization: `Bearer ${process.env.PERPLEXITY_API_KEY}`,
+          "X-API-KEY": `Bearer ${process.env.SERPER_API_KEY}`,
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
