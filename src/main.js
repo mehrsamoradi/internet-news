@@ -46,9 +46,9 @@ export default async ({req, res, log, error}) => {
             .catch((error) => console.error(error));
 
 
-        if (!serperResponse.ok) {
-            throw new Error(`Serper API Error: ${serperResponse.status}`);
-        }
+        // if (!serperResponse.ok) {
+        //     throw new Error(`Serper API Error: ${serperResponse.status}`);
+        // }
 
         const serperData = await serperResponse.json();
         const rawData = serperData.choices[0].message.content;
