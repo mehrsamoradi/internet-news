@@ -47,10 +47,10 @@ export default async ({req, res, log, error}) => {
         }
 
         const serperData = await serperResponse.json();
-        let rawData = ""
-        for (let i in serperData.organic) {
-            rawData += i.title + " " + i.snippet + " " + i.date
-        }
+        let rawData =serperData.organic.toString()
+        // for (let i in serperData.organic) {
+        //     rawData += i.title + " " + i.snippet + " " + i.date
+        // }
         log('✅ Data collected successfully '+ rawData);
 
         /* ---------------- 3. Analyze with OpenAI (ChatGPT) ---------------- */
